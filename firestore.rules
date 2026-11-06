@@ -1,0 +1,30 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function isDomainUser() {
+      return request.auth != null
+        && request.auth.token.email_verified == true
+        && (
+          request.auth.token.email.matches('.*@hbplus[.]fit$')
+          // TEMP-TEST-EMAIL: remove before submission
+          || request.auth.token.email == 'kshirodbiswal208@gmail.com'
+        );
+    }
+
+    function isAdmin() {
+      return isDomainUser()
+        && get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'admin';
+    }
+
+    match /users/{uid} {
+      allow read: if isDomainUser() && (request.auth.uid == uid || isAdmin());
+      allow create: if isDomainUser() && request.auth.uid == uid
+                    && request.resource.data.role == 'user';
+      allow update: if isDomainUser() && request.auth.uid == uid
+                    && request.resource.data.role == resource.data.role;
+      allow update: if isAdmin();
+      allow delete: if false;
+    }
+  }
+}

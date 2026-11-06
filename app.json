@@ -1,0 +1,34 @@
+{
+  "expo": {
+    "firebase": {
+      "apiKey": "EXPO_PUBLIC_FIREBASE_API_KEY",
+      "authDomain": "EXPO_PUBLIC_FIREBASE_AUTH_DOMAIN",
+      "projectId": "EXPO_PUBLIC_FIREBASE_PROJECT_ID",
+      "storageBucket": "EXPO_PUBLIC_FIREBASE_STORAGE_BUCKET",
+      "messagingSenderId": "EXPO_PUBLIC_FIREBASE_MESSAGING_SENDER_ID",
+      "appId": "EXPO_PUBLIC_FIREBASE_APP_ID"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "aadbe02f-33b7-45e3-8a70-144dc3d2428c"
+      }
+    },
+    "scheme": "hbauthapp",
+    "android": {
+      "package": "com.hbplus.authapp",
+      "googleServicesFile": "./google-services.json"
+    },
+    "ios": {
+      "bundleIdentifier": "com.hbplus.authapp",
+      "googleServicesFile": "./GoogleService-Info.plist"
+    },
+    "plugins": [
+      [
+        "@react-native-google-signin/google-signin",
+        {
+          "iosUrlScheme": "com.googleusercontent.apps.1058130841183-tn9t7e7juoolcqp48ptfl37d984ji82n"
+        }
+      ]
+    ]
+  }
+}
