@@ -23,12 +23,7 @@
       "googleServicesFile": "./GoogleService-Info.plist"
     },
     "plugins": [
-      [
-        "@react-native-google-signin/google-signin",
-        {
-          "iosUrlScheme": "com.googleusercontent.apps.1058130841183-tn9t7e7juoolcqp48ptfl37d984ji82n"
-        }
-      ]
+      "@react-native-google-signin/google-signin"
     ]
   }
 }
