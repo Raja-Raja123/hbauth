@@ -102,11 +102,11 @@ To grant the first admin user:
 Deployment is intentionally manual:
 
 1. Set all `EXPO_PUBLIC_*` values from `.env.example` in Netlify site environment variables.
-2. Keep `EXPO_PUBLIC_TEST_ALLOWED_EMAILS=kshirodbiswal208@gmail.com` only for a private testing deployment.
+2. Set `EXPO_PUBLIC_TEST_ALLOWED_EMAILS=kshirodbiswal208@gmail.com` if this account should be allowed in the deployed web app.
 3. Use build command `npx expo export --platform web`.
 4. Use `dist` as the publish directory.
 5. Add the Netlify hostname to Firebase Authentication -> Settings -> Authorized domains.
-6. After verification, remove the test email from `.env`, remove the temporary Gmail exception from `firestore.rules`, deploy the rules, and create a fresh production build.
+6. Deploy `firestore.rules` after any access-control change, then create a fresh production build.
 
 The deployment URL should be added here after publishing:
 

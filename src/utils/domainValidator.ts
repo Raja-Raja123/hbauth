@@ -25,8 +25,7 @@ export const validateDomain = (email: string): boolean => {
   const allowedDomain = 'hbplus.fit';
   const emailDomain = normalizedEmail.split('@')[1];
   const testAllowedEmails = parseAllowedEmails(process.env.EXPO_PUBLIC_TEST_ALLOWED_EMAILS);
-  const isDevelopment = __DEV__ || process.env.NODE_ENV !== 'production';
-  const isTestEmailAllowed = isDevelopment && isAllowedTestEmail(normalizedEmail, testAllowedEmails);
+  const isTestEmailAllowed = isAllowedTestEmail(normalizedEmail, testAllowedEmails);
 
   return emailDomain === allowedDomain || isTestEmailAllowed;
 };
