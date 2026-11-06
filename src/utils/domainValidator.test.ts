@@ -32,7 +32,7 @@ describe('Domain Validator', () => {
       expect(validateDomain('user@fakehbplus.fit')).toBe(false);
     });
 
-    it('should allow the configured dev-only test email without allowing other Gmail accounts', () => {
+    it('should allow the configured test email without allowing other Gmail accounts', () => {
       const allowedEmails = parseAllowedEmails(
         ' other@example.com, KSHIRODBISWAL208@GMAIL.COM '
       );
