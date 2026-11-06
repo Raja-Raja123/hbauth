@@ -105,8 +105,9 @@ Deployment is intentionally manual:
 2. Set `EXPO_PUBLIC_TEST_ALLOWED_EMAILS=kshirodbiswal208@gmail.com` if this account should be allowed in the deployed web app.
 3. Use build command `npx expo export --platform web`.
 4. Use `dist` as the publish directory.
-5. Add the Netlify hostname to Firebase Authentication -> Settings -> Authorized domains.
-6. Deploy `firestore.rules` after any access-control change, then create a fresh production build.
+5. The `public/_redirects` file keeps Expo Router client-side routes working when a page is refreshed.
+6. Add the Netlify hostname to Firebase Authentication -> Settings -> Authorized domains.
+7. Deploy `firestore.rules` after any access-control change, then create a fresh production build.
 
 The deployment URL should be added here after publishing:
 
