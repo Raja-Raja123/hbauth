@@ -53,7 +53,7 @@ The iOS values in `app.json` are sourced from `GoogleService-Info.plist`:
 
 - `ios.bundleIdentifier`: `com.hbplus.authapp` (the plist `BUNDLE_ID`).
 - `ios.googleServicesFile`: `./GoogleService-Info.plist` (the checked-in plist path).
-- Google Sign-In plugin `iosUrlScheme`: `com.googleusercontent.apps.1058130841183-tn9t7e7juoolcqp48ptfl37d984ji82n` (the plist `REVERSED_CLIENT_ID`).
+- Google Sign-In plugin `iosUrlScheme`: `` (the plist `REVERSED_CLIENT_ID`).
 
 Do not use the plist `CLIENT_ID` as `EXPO_PUBLIC_GOOGLE_WEB_CLIENT_ID`; that environment variable must remain the OAuth 2.0 Web client ID.
 
